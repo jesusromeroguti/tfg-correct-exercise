@@ -60,6 +60,7 @@ try:
     numLinia = 1                                # Indica el número de la línia en que està al fitxer
     vegada = 0                                  # Indica la a quin punt del cos està
     nextFrame = False                           # Indica quan passa a un altre frame
+    totalFrames = 0
 
     try:
 
@@ -78,10 +79,12 @@ try:
                 datum.cvInputData = frame
                 opWrapper.emplaceAndPop(op.VectorDatum([datum]))
 
+                totalFrames += 1
+
                 # Display Image
                 kpdict['body keypoint'] = np.array(datum.poseKeypoints).tolist()
                 kplist.append(kpdict.copy())
-                print("Body keypoints: \n" + str(datum.poseKeypoints))
+                # print("Body keypoints: \n" + str(datum.poseKeypoints))
                 cv2.imshow("OpenPose 1.7.0 - Tutorial Python API",
                            datum.cvOutputData)
                 cv2.waitKey(1)
@@ -92,6 +95,8 @@ try:
     except Exception as e:
         print(e)
         sys.exit(-1)
+
+    print("Frames totales", totalFrames)
 
     f = open(nom_fitxer, "w+")
     json.dump(kplist, f, indent=4)
