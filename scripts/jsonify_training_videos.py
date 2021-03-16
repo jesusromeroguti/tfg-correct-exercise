@@ -56,7 +56,7 @@ def jsonify(file_path):
 
         base = os.path.basename(file_path)
         nom = os.path.splitext(base)[0]
-        result_dir = "/home/aleix/Escriptori/coses_tfg/videos/esquat/jsons/"
+        result_dir = "/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/"
         nom_fitxer = result_dir + nom + ".json"
         kplist = []                                 # Llista de keypoints
         kpdict = {}                                 # Diccionari de keypoints
@@ -99,7 +99,7 @@ def jsonify(file_path):
             print(e)
             sys.exit(-1)
 
-        print("Frames totales", totalFrames)
+        kplist.append("Frames: " + str(totalFrames))
 
         f = open(nom_fitxer, "w+")
         json.dump(kplist, f, indent=4)
