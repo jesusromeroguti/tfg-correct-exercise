@@ -237,12 +237,12 @@ def jsonify(file_path):
                         numLinia += 1
 
                     elif vegada == 23:
-                        print(linia + "\n"  + "\t" + "\t" + "\t" + "\t"  + "\t" + '"Dit petit esquerre",', file=fp)
+                        print(linia + "\n"  + "\t" + "\t" + "\t" + "\t"  + "\t" + '"Dit petit dret",', file=fp)
                         vegada += 1
                         numLinia += 1
 
                     elif vegada == 24:
-                        print(linia + "\n"  + "\t" + "\t" + "\t" + "\t"  + "\t" + '"Taló esquerre",', file=fp)
+                        print(linia + "\n"  + "\t" + "\t" + "\t" + "\t"  + "\t" + '"Taló dret",', file=fp)
                         numLinia = 1
                         nextFrame = True
 
