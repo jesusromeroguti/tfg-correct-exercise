@@ -6,25 +6,17 @@ import argparse
 import numpy as np
 import csv
 
-
 def normValues(arrayFrame):
     mitja_X = 0
     mitja_Y = 0
     # Arrays de coordenades
     v_x = []
     v_y = []
-    pos = 0
 
-    while(pos != len(arrayFrame)):
-        v_x.append(arrayFrame[pos])
-        pos += 1
-        v_y.append(arrayFrame[pos])
-
-        if pos == len(arrayFrame) - 1:
-            pos = len(arrayFrame)
-        else:
-            pos += 2
-
+    for i in range(len(arrayFrame[0])):
+      v_x.append(arrayFrame[0][i][0])
+      v_y.append(arrayFrame[0][i][1])
+      
     # Transformo les llistes en numpy arrays
     v_x = np.array(v_x)
     v_y = np.array(v_y)
@@ -84,7 +76,7 @@ def toCsv(file_path):
         raise e
     # Flags
     parser = argparse.ArgumentParser()
-    parser.add_argument("--video_path", default=file_path,
+    parser.add_argument("--image_path", default=file_path,
                         help="Process an image. Read all standard formats (jpg, png, bmp, etc.).")
     args = parser.parse_known_args()
 
@@ -117,46 +109,26 @@ def toCsv(file_path):
 
         # Process Image
         datum = op.Datum()
-        imageToProcess = cv2.VideoCapture(args[0].video_path)
-        totalFrames = 0
-        arrayNoNorm = np.array(0)
+        imageToProcess = cv2.imread(args[0].image_path)
+        datum.cvInputData = imageToProcess
+        opWrapper.emplaceAndPop(op.VectorDatum([datum]))
+
+        # Display Image
+        kp_array = np.array(datum.poseKeypoints)
+
         # 1. Guardem totes les posicions del vídeo en una array.
-        while(imageToProcess.isOpened()):
-            ret, frame = imageToProcess.read()
-            if ret == True:
-                datum.cvInputData = frame
-                opWrapper.emplaceAndPop(op.VectorDatum([datum]))
 
-                totalFrames += 1
+        arrayFrame = normValues(kp_array)
 
-                # Display Image
-                kp_array = np.array(datum.poseKeypoints)
-                arrayNoNorm = np.append(arrayNoNorm, kp_array)
-
-                # print("Body keypoints: \n" + str(datum.poseKeypoints))
-                cv2.imshow("OpenPose 1.7.0 - Tutorial Python API",
-                           datum.cvOutputData)
-                cv2.waitKey(1)
-
-            else:
-                break
-
-        pos = 0
-        print(totalFrames)
-        for i in range(totalFrames):
-        	# 2. Normalitzem dades frame per frame (cada 75 posicions ja que te x, y i accuracy)
-            pos += 75
-            arrayFrame = arrayNoNorm[:pos]
-            arrayFrame = normValues(arrayFrame)
-
-        	# 3. Les guardem en un csv
-            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
-                writer = csv.writer(file)
-                writer.writerow(arrayFrame)
+        # print(arrayFrame)
+        with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
+          writer = csv.writer(file)
+          writer.writerow(arrayFrame)
 
     except Exception as e:
         print(e)
         sys.exit(-1)
+
 
 
 fieldnames = ['Nas',
@@ -193,9 +165,4 @@ with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_d
 
 directori = "/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/"
 
-toCsv("/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/front_bad1.avi")
-
-#for file in os.listdir(directori):
-#    if file.endswith(".avi"):
-#        path = os.path.join(directori, file)
-#        toCsv(path)
+toCsv('/home/aleix/Escriptori/coses_tfg/fotos/esquat/centrat.png')
