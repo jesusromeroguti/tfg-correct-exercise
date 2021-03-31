@@ -1,0 +1,383 @@
+---------------------------------------
+Vídeo:  right_bad2.avi
+Frames:  59
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  front_bad12.avi
+Frames:  71
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad9.avi
+Frames:  106
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_good2.avi
+Frames:  122
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  left_bad3.avi
+Frames:  70
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  left_good1.avi
+Frames:  124
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  right_bad5.avi
+Frames:  96
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  left_good8.avi
+Frames:  79
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad13.avi
+Frames:  84
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad18.avi
+Frames:  106
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  front_good3.avi
+Frames:  97
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad4.avi
+Frames:  124
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  right_good5.avi
+Frames:  130
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  front_bad5.avi
+Frames:  57
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  right_good6.avi
+Frames:  168
+FPS:  30
+Temps:  5
+---------------------------------------
+Vídeo:  left_bad16.avi
+Frames:  96
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad1.avi
+Frames:  61
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad10.avi
+Frames:  96
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad1.avi
+Frames:  101
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_good7.avi
+Frames:  101
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad15.avi
+Frames:  78
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  right_bad9.avi
+Frames:  74
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  right_bad13.avi
+Frames:  65
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  left_good2.avi
+Frames:  146
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  front_good5.avi
+Frames:  126
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  left_bad4.avi
+Frames:  93
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_good1.avi
+Frames:  66
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  left_bad6.avi
+Frames:  73
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad17.avi
+Frames:  98
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad10.avi
+Frames:  84
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  right_bad15.avi
+Frames:  93
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad2.avi
+Frames:  49
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  front_bad3.avi
+Frames:  73
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad2.avi
+Frames:  71
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  left_bad7.avi
+Frames:  121
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  front_bad1.avi
+Frames:  58
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  left_bad5.avi
+Frames:  62
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_good2.avi
+Frames:  96
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad12.avi
+Frames:  56
+FPS:  29
+Temps:  1
+---------------------------------------
+Vídeo:  front_good.avi
+Frames:  99
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad19.avi
+Frames:  76
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  right_bad12.avi
+Frames:  136
+FPS:  29
+Temps:  4
+---------------------------------------
+Vídeo:  front_bad8.avi
+Frames:  58
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  left_bad14.avi
+Frames:  101
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad14.avi
+Frames:  106
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad11.avi
+Frames:  115
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  front_bad11.avi
+Frames:  75
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_good6.avi
+Frames:  146
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  left_good6.avi
+Frames:  123
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  left_good3.avi
+Frames:  112
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  front_bad14.avi
+Frames:  121
+FPS:  29
+Temps:  4
+---------------------------------------
+Vídeo:  front_bad4.avi
+Frames:  51
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  left_good5.avi
+Frames:  137
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  right_bad6.avi
+Frames:  75
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad15.avi
+Frames:  104
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  left_good7.avi
+Frames:  122
+FPS:  29
+Temps:  4
+---------------------------------------
+Vídeo:  front_bad7.avi
+Frames:  59
+FPS:  30
+Temps:  1
+---------------------------------------
+Vídeo:  left_bad17.avi
+Frames:  68
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  right_good4.avi
+Frames:  129
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  left_bad13.avi
+Frames:  93
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  front_bad6.avi
+Frames:  63
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_good7.avi
+Frames:  168
+FPS:  29
+Temps:  5
+---------------------------------------
+Vídeo:  left_bad18.avi
+Frames:  79
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  left_bad9.avi
+Frames:  114
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad3.avi
+Frames:  80
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  left_bad11.avi
+Frames:  78
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  left_bad8.avi
+Frames:  83
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  front_bad16.avi
+Frames:  107
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  front_bad19.avi
+Frames:  92
+FPS:  29
+Temps:  3
+---------------------------------------
+Vídeo:  right_bad7.avi
+Frames:  77
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  left_good9.avi
+Frames:  80
+FPS:  29
+Temps:  2
+---------------------------------------
+Vídeo:  left_good4.avi
+Frames:  90
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  front_good4.avi
+Frames:  72
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo:  right_good3.avi
+Frames:  125
+FPS:  30
+Temps:  4
+---------------------------------------
+Vídeo:  right_bad8.avi
+Frames:  104
+FPS:  30
+Temps:  3
+---------------------------------------
+Vídeo:  left_bad10.avi
+Frames:  88
+FPS:  30
+Temps:  2
+---------------------------------------
+Vídeo amb menys frames:  49
+Vídeo amb més frames:  168
