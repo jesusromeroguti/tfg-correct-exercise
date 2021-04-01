@@ -145,8 +145,9 @@ def toCsv(file_path):
         print(totalFrames)
         for i in range(totalFrames):
         	# 2. Normalitzem dades frame per frame (cada 75 posicions ja que te x, y i accuracy)
+            posini = pos
             pos += 75
-            arrayFrame = arrayNoNorm[:pos]
+            arrayFrame = arrayNoNorm[posini:pos]
             arrayFrame = normValues(arrayFrame)
 
         	# 3. Les guardem en un csv
