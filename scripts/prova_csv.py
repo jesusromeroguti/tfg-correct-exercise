@@ -7,7 +7,7 @@ import numpy as np
 import csv
 
 
-def normValues(arrayFrame):
+def normValues(arrayFrame, label):
     mitja_X = 0
     mitja_Y = 0
     # Arrays de coordenades
@@ -50,14 +50,12 @@ def normValues(arrayFrame):
         norm_y.append(y)
 
     # Netejem l'array donada
-    arrayFrame = []
+    arrayFrame = [label]
 
     # Ajuntem x's i y's
     for i in range(len(norm_x)):
-        aux = []
-        aux.append(norm_x[i])
-        aux.append(norm_y[i])
-        arrayFrame.append(aux)
+        arrayFrame.append(norm_x[i])
+        arrayFrame.append(norm_y[i])
 
     return arrayFrame
 
@@ -141,14 +139,19 @@ def toCsv(file_path):
             else:
                 break
 
+        label = file_path.split('/')[8]
+        label = label.split('_')[1]
+        label = label.split('.')[0]
+        label = label.join([c for c in label if c.isalpha()])
         pos = 0
+        
         print(totalFrames)
         for i in range(totalFrames):
         	# 2. Normalitzem dades frame per frame (cada 75 posicions ja que te x, y i accuracy)
             posini = pos
             pos += 75
             arrayFrame = arrayNoNorm[posini:pos]
-            arrayFrame = normValues(arrayFrame)
+            arrayFrame = normValues(arrayFrame, label)
 
         	# 3. Les guardem en un csv
             with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
@@ -160,31 +163,57 @@ def toCsv(file_path):
         sys.exit(-1)
 
 
-fieldnames = ['Nas',
-              'Clatell',
-              'Espatlla dreta',
-              'Colze dret',
-              'Canell dret',
-              'Espatlla esquerra',
-              'Colze esquerre',
-              'Canell esquerre',
-              'Cadera centre',
-              'Cadera banda dreta',
-              'Genoll dret',
-              'Turmell dret',
-              'Cadera banda esquerra',
-              'Genoll esquerre',
-              'Turmell esquerre',
-              'Ull dret',
-              'Ull esquerre',
-              'Orella dreta',
-              'Orella esquerre',
-              'Dit gros esquerre',
-              'Dit petit esquerre',
-              'Taló esquerre',
-              'Dit gros dret',
-              'Dit petit dret',
-              'Taló dret']
+fieldnames = ['Label',
+              'NasX',
+              'NasY',
+              'ClatellX',
+              'ClatellY',
+              'Espatlla dretaX',
+              'Espatlla dretaY',
+              'Colze dretX',
+              'Colze dretY',
+              'Canell dretX',
+              'Canell dretY',
+              'Espatlla esquerraX',
+              'Espatlla esquerraY',
+              'Colze esquerreX',
+              'Colze esquerreY',
+              'Canell esquerreX',
+              'Canell esquerreY',
+              'Cadera centreX',
+              'Cadera centreY',
+              'Cadera banda dretaX',
+              'Cadera banda dretaY',
+              'Genoll dretX',
+              'Genoll dretY',
+              'Turmell dretX',
+              'Turmell dretY',
+              'Cadera banda esquerraX',
+              'Cadera banda esquerraY',
+              'Genoll esquerreX',
+              'Genoll esquerreY',
+              'Turmell esquerreX',
+              'Turmell esquerreY',
+              'Ull dretX',
+              'Ull dretY',
+              'Ull esquerreX',
+              'Ull esquerreY',
+              'Orella dretaX',
+              'Orella dretaY',
+              'Orella esquerreX',
+              'Orella esquerreY',
+              'Dit gros esquerreX',
+              'Dit gros esquerreY',
+              'Dit petit esquerreX',
+              'Dit petit esquerreY',
+              'Taló esquerreX',
+              'Taló esquerreY',
+              'Dit gros dretX',
+              'Dit gros dretY',
+              'Dit petit dretX',
+              'Dit petit dretY',
+              'Taló dretX',
+              'Taló dretY']
 
 
 with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', mode='w') as file:
@@ -192,11 +221,11 @@ with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_d
     file_writer.writeheader()
 
 
-directori = "/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/"
+directori = "/home/aleix/Escriptori/coses_tfg/videos/esquat/dataset1/"
 
-toCsv("/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/front_bad1.avi")
+# toCsv("/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/front_bad1.avi")
 
-#for file in os.listdir(directori):
-#    if file.endswith(".avi"):
-#        path = os.path.join(directori, file)
-#        toCsv(path)
+for file in os.listdir(directori):
+   if file.endswith(".avi"):
+       path = os.path.join(directori, file)
+       toCsv(path)
