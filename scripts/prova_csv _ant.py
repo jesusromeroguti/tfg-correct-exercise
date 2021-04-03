@@ -6,13 +6,6 @@ import argparse
 import numpy as np
 import csv
 
-def cutFps(frames):
-    target = 0
-    if frames > 75 and frames <= 150:
-        target = 1
-    elif frames > 150:
-        target = 3
-    return target
 
 def normValues(arrayFrame, label):
     mitja_X = 0
@@ -31,11 +24,11 @@ def normValues(arrayFrame, label):
             pos = len(arrayFrame)
         else:
             pos += 2
-    
+
     # Transformo les llistes en numpy arrays
     v_x = np.array(v_x)
     v_y = np.array(v_y)
- 
+
     mitja_X = np.mean(v_x)
     mitja_Y = np.mean(v_y)
 
@@ -55,7 +48,7 @@ def normValues(arrayFrame, label):
     for p in v_y:
         y = (p - mitja_Y) / dv
         norm_y.append(y)
-    
+
     # Netejem l'array donada
     arrayFrame = [label]
 
@@ -123,69 +116,47 @@ def toCsv(file_path):
         # Process Image
         datum = op.Datum()
         imageToProcess = cv2.VideoCapture(args[0].video_path)
+        totalFrames = 0
         arrayNoNorm = np.array(0)
-        totalFrames = int(imageToProcess.get(cv2.CAP_PROP_FRAME_COUNT))
-        target = cutFps(totalFrames)
-        counter = 0
-        framesRet = 0
-
         # 1. Guardem totes les posicions del vídeo en una array.
         while(imageToProcess.isOpened()):
-            if counter == target:
-                ret, frame = imageToProcess.read()
-                if ret == True:
-                    datum.cvInputData = frame
-                    opWrapper.emplaceAndPop(op.VectorDatum([datum]))
+            ret, frame = imageToProcess.read()
+            if ret == True:
+                datum.cvInputData = frame
+                opWrapper.emplaceAndPop(op.VectorDatum([datum]))
 
-                    # Display Image
-                    kp_array = np.array(datum.poseKeypoints)
-                    arrayNoNorm = np.append(arrayNoNorm, kp_array)
+                totalFrames += 1
 
-                    # print("Body keypoints: \n" + str(datum.poseKeypoints))
-                    cv2.imshow("OpenPose 1.7.0 - Tutorial Python API",
-                        datum.cvOutputData)
-                    cv2.waitKey(1)
-                    counter = 0
-                    framesRet += 1
-                else:
-                    break
+                # Display Image
+                kp_array = np.array(datum.poseKeypoints)
+                arrayNoNorm = np.append(arrayNoNorm, kp_array)
+
+                # print("Body keypoints: \n" + str(datum.poseKeypoints))
+                cv2.imshow("OpenPose 1.7.0 - Tutorial Python API",
+                           datum.cvOutputData)
+                cv2.waitKey(1)
+
             else:
-                imageToProcess.grab()
-                counter += 1
+                break
 
         label = file_path.split('/')[8]
         label = label.split('_')[1]
         label = label.split('.')[0]
-        #label = label.join([c for c in label if c.isalpha()])
-
+        label = label.join([c for c in label if c.isalpha()])
         pos = 0
         
-        print("Frames sencers: ",totalFrames)
-        print("Frames retallats: ", framesRet)
-        for i in range(framesRet):
+        print(totalFrames)
+        for i in range(totalFrames):
         	# 2. Normalitzem dades frame per frame (cada 75 posicions ja que te x, y i accuracy)
             posini = pos
             pos += 75
             arrayFrame = arrayNoNorm[posini:pos]
-            print(len(arrayFrame))
-            if len(arrayFrame) == 1:
-                print(arrayFrame)
             arrayFrame = normValues(arrayFrame, label)
-            
+
         	# 3. Les guardem en un csv
             with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
                 writer = csv.writer(file)
                 writer.writerow(arrayFrame)
-
-        # Fem padding fins a 75, ja que és el màxim de frames.
-        zeros = [label]
-        for i in range(49):
-            zeros.append(0)
-        while(framesRet != 75):
-            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
-                writer = csv.writer(file)
-                writer.writerow(zeros)
-            framesRet += 1
 
     except Exception as e:
         print(e)
