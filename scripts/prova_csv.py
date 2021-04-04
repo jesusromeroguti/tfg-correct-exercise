@@ -179,7 +179,7 @@ def toCsv(file_path):
 
         # Fem padding fins a 75, ja que és el màxim de frames.
         zeros = [label]
-        for i in range(49):
+        for i in range(50):
             zeros.append(0)
         while(framesRet != 75):
             with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
