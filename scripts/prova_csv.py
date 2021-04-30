@@ -139,7 +139,11 @@ def toCsv(file_path):
 
                     # Display Image
                     kp_array = np.array(datum.poseKeypoints)
-                    arrayNoNorm = np.append(arrayNoNorm, kp_array)
+                    
+                    # Treiem els outliers
+                    nou_array = np.delete(kp_array[0], [3, 4, 15, 17, 22, 23], 0)
+                    
+                    arrayNoNorm = np.append(arrayNoNorm, nou_array)
 
                     # print("Body keypoints: \n" + str(datum.poseKeypoints))
                     cv2.imshow("OpenPose 1.7.0 - Tutorial Python API",
@@ -160,31 +164,31 @@ def toCsv(file_path):
 
         pos = 0
         
-        print("Frames sencers: ",totalFrames)
-        print("Frames retallats: ", framesRet)
+        # print("Frames sencers: ",totalFrames)
+        # print("Frames retallats: ", framesRet)
         for i in range(framesRet):
         	# 2. Normalitzem dades frame per frame (cada 75 posicions ja que te x, y i accuracy)
             posini = pos
-            pos += 75
+            pos += 57
             arrayFrame = arrayNoNorm[posini:pos]
-            print(len(arrayFrame))
-            if len(arrayFrame) == 1:
-                print(arrayFrame)
+            # print(len(arrayFrame))
+            # if len(arrayFrame) == 1:
+            #     print(arrayFrame)
             arrayFrame = normValues(arrayFrame, label)
             
         	# 3. Les guardem en un csv
-            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
+            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset2.csv', 'a') as file:
                 writer = csv.writer(file)
                 writer.writerow(arrayFrame)
 
         # Fem padding fins a 75, ja que és el màxim de frames.
-        zeros = [label]
-        for i in range(50):
-            zeros.append(0)
+        padding = [label]
+        for i in range(38):
+            padding.append(-1000.0)
         while(framesRet != 75):
-            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', 'a') as file:
+            with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset2.csv', 'a') as file:
                 writer = csv.writer(file)
-                writer.writerow(zeros)
+                writer.writerow(padding)
             framesRet += 1
 
     except Exception as e:
@@ -199,10 +203,6 @@ fieldnames = ['Label',
               'ClatellY',
               'Espatlla dretaX',
               'Espatlla dretaY',
-              'Colze dretX',
-              'Colze dretY',
-              'Canell dretX',
-              'Canell dretY',
               'Espatlla esquerraX',
               'Espatlla esquerraY',
               'Colze esquerreX',
@@ -223,12 +223,8 @@ fieldnames = ['Label',
               'Genoll esquerreY',
               'Turmell esquerreX',
               'Turmell esquerreY',
-              'Ull dretX',
-              'Ull dretY',
               'Ull esquerreX',
               'Ull esquerreY',
-              'Orella dretaX',
-              'Orella dretaY',
               'Orella esquerreX',
               'Orella esquerreY',
               'Dit gros esquerreX',
@@ -237,15 +233,11 @@ fieldnames = ['Label',
               'Dit petit esquerreY',
               'Taló esquerreX',
               'Taló esquerreY',
-              'Dit gros dretX',
-              'Dit gros dretY',
-              'Dit petit dretX',
-              'Dit petit dretY',
               'Taló dretX',
               'Taló dretY']
 
 
-with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset.csv', mode='w') as file:
+with open('/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/dataset/train_dataset2.csv', mode='w') as file:
     file_writer = csv.DictWriter(file, fieldnames=fieldnames)
     file_writer.writeheader()
 
@@ -254,7 +246,11 @@ directori = "/home/aleix/Escriptori/coses_tfg/videos/esquat/dataset1/"
 
 # toCsv("/home/aleix/Escriptori/coses_tfg/videos/esquat/no-openpose/front_bad1.avi")
 
+numVideo = 0
+numVideos = len(os.listdir(directori))
 for file in os.listdir(directori):
    if file.endswith(".avi"):
+       numVideo += 1
+       print("Vídeo número " + str(numVideo) + " de " + str(numVideos))
        path = os.path.join(directori, file)
        toCsv(path)

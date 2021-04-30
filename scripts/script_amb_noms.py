@@ -30,7 +30,7 @@ try:
 
     # Flags
     parser = argparse.ArgumentParser()
-    parser.add_argument("--image_path", default="../../../examples/media/captura_costat_noopenpose.png", help="Process an image. Read all standard formats (jpg, png, bmp, etc.).")
+    parser.add_argument("--image_path", default="../../../examples/media/esquerra_avall.png", help="Process an image. Read all standard formats (jpg, png, bmp, etc.).")
     args = parser.parse_known_args()
 
     # Custom Params (refer to include/openpose/flags.hpp for more parameters)
@@ -70,7 +70,7 @@ try:
     kpdict['body keypoint'] = np.array(datum.poseKeypoints).tolist()
     kplist.append(kpdict.copy())
     
-    nom_fitxer = "result_script_amb_noms.json"
+    nom_fitxer = "result_esquerra_avall.json"
     numLinia = 1
     vegada = 0
 
