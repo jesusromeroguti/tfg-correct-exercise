@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: black;
+    padding: 20px;
+    text-align: justify;
+    font-size: 40px;
+  }
+  
+  /* Create three unequal columns that floats next to each other */
+  .column {
+    background-color: black;
+    float: left;
+    text-align: justify;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  /* Column superior */
+  .column.superior {
+    background-color: black;
+    width: 50%;
+  }
+
+  /* Inferior column left */
+  .column.inferior.left {
+    background-color: black;
+    width: 70%;
+  }
+
+  /* Inferior column mid */
+  .column.inferior.mid {
+    background-color: black;
+    width: 20%;
+  }
+  
+  /* Inferior column right */
+  .column.inferior.right {
+    background-color: black;
+    width: 10%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .column.superior, .column.inferior.left, .column.inferior.mid, .column.inferior.right {
+      width: 100%;
+    }
+  }
