@@ -10,5 +10,15 @@
 </ion-header>
 
 <ion-content>
+  <input class="form-control" type="file" 
+            (change)="onChange($event)">
+  
+    <button (click)="upload()" 
+        class="btn btn-success">
+        Upload
+    </button>
+
+  
+  <p ng-bind-html="myText"></p>
 
 </ion-content>
