@@ -16,14 +16,16 @@ export class PujarvideoPage implements OnInit {
 
   file: File = null;
   baseApiUrl = 'http://127.0.0.1:3000/predict'
-  res = null
+  res = []
   text = ''
   
   upload(){
 
     // Create form data
     const formData = new FormData();     
-      
+    
+    this.res = []
+    this.text = ''
     // Store form name as "file" with file data
     formData.append("videofile", this.file, this.file.name);
     console.log(formData.getAll);
@@ -34,16 +36,54 @@ export class PujarvideoPage implements OnInit {
       console.log(data);
       this.res = data["Resultat"]
       console.log(this.res);
+      this.tractarCodi();
     }, (err) => {
       console.log(err);
     });
 
   }
 
-  tractarCodi() {
-    if(this.res.includes("good") && this.res.length === 1) {
-      this.text = 'Ets el puto amo';
+  tractarCodi() {    
+    if(this.res.includes("good")) {
+      if(this.res.length == 1){
+        this.text = 'Ets el puto amo';
+      }
+      else {
+        this.text = 'Creiem que tens un petit error, però per a estar segurs grava un altre vídeo. ';
+        if(this.res.includes("no90")) {
+          this.text += 'No baixes suficientment. Flexiona més els genolls. ';
+        }
+        if(this.res.includes("pesEndavant")) {
+          this.text += "Tires el pes endavant. Assegura't de no aixecar els talons i tirar el cul enrere. ";
+        }
+        if(this.res.includes("torsoInclinat")) {
+          this.text += "Inclines massa el tors. A l'hora de fer l'esquat, el tors es queda fix i baixa a la mateixa vegada que la resta del cos. ";
+        }
+        if(this.res.includes("desnivellPeus")) {
+          this.text += "Tens els peus mal posats. Prova de posar-los en paral·lel i a la mateixa alçada. ";
+        }
+      }     
     }
+    else if(this.res.includes("bad")) {
+      if(this.res.length == 1) {
+        this.text = "Sembla que està bé, però pot haver-hi un error en la manera que l'has gravat. Si us plau, torna'l a fer de nou.";
+      }
+      else {
+        if(this.res.includes("no90")) {
+          this.text += 'No baixes suficientment. Flexiona més els genolls. ';
+        }
+        if(this.res.includes("pesEndavant")) {
+          this.text += "Tires el pes endavant. Assegura't de no aixecar els talons i tirar el cul enrere. ";
+        }
+        if(this.res.includes("torsoInclinat")) {
+          this.text += "Inclines massa el tors. A l'hora de fer l'esquat, el tors es queda fix i baixa a la mateixa vegada que la resta del cos. ";
+        }
+        if(this.res.includes("desnivellPeus")) {
+          this.text += "Tens els peus mal posats. Prova de posar-los en paral·lel i a la mateixa alçada. ";
+        }
+      }
+    }
+    document.getElementById("name").innerHTML = this.text
   }
 
   ngOnInit() {
