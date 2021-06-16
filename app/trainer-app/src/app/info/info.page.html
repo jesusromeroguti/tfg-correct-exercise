@@ -1,14 +1,63 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
       <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       </ion-buttons>
-    <ion-title>
+    <ion-title text-align="left">
       Informació
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-grid>
+    <h2> Sobre el projecte </h2>
+    <br>
+    <ion-row class="ion-justify-content-center">
+      <ion-col>
+        <div>
+          
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
+      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </div>
+      </ion-col>
+      
+      <ion-col size="auto">
+        <ion-row>
+          <div>
+            <ion-img src="assets/costat_fondo.png"></ion-img> 
+          </div>
+          <div>
+            <ion-img src="assets/costat_fondo.png"></ion-img> 
+          </div>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center"> 
+      <ion-col class="faq">
+        <h3> FAQ </h3>
+        <br>
+        <ion-card (click)="expandItem(item)" *ngFor="let item of items">
+          <ion-card-header>
+            <ion-card-title>{{item.titol}}</ion-card-title>
+          </ion-card-header>
+          <app-expandable expandHeight="150px" [expanded]="item.expanded">
+            <ion-card class="interior-card">{{item.text}}</ion-card>
+            
+          </app-expandable>
+        </ion-card>
+      </ion-col>
+
+      <ion-col class="about">
+        <h3> Sobre els autors </h3>
+        <br>
+        En Jesús Romero Gutiérrez és un màquine filldepute que sap tot de IA. Sera el pròxim Yan LeCun. L'Aleix Serra Llorens és un parguela que porta 50 anys estudiant.
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

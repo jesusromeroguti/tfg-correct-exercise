@@ -15,17 +15,19 @@ export class PujarvideoPage implements OnInit {
   constructor(private http: HttpClient) { }
 
   file: File = null;
-  baseApiUrl = 'http://127.0.0.1:3000/predict'
-  res = []
-  text = ''
+  baseApiUrl = 'http://127.0.0.1:3000/predict';
+  res = [];
+  text = '';
+  htmlToAdd = '';
+  // resultat = false;
   
   upload(){
-
+    // this.resultat = true;
     // Create form data
     const formData = new FormData();     
     
     this.res = []
-    this.text = ''
+    // this.text = ''
     // Store form name as "file" with file data
     formData.append("videofile", this.file, this.file.name);
     console.log(formData.getAll);
@@ -83,7 +85,13 @@ export class PujarvideoPage implements OnInit {
         }
       }
     }
-    document.getElementById("name").innerHTML = this.text
+    else if(this.res.includes("noVideo")) {
+      this.text = "Filldepute puja un puto video o et mato. ";
+    }
+    
+    document.getElementById("resposta").innerHTML = this.text;
+    // this.htmlToAdd = '<ion-col class="res-col"><ion-card><ion-card-title>Resultat</ion-card-title><ion-card-content><div id="resposta"></div></ion-card-content></ion-card></ion-col><ion-col><ion-card class="video-card"><ion-card-title>Vídeo</ion-card-title><ion-card-content><ion-img class="video" src="assets/costat_fondo.png"></ion-img></ion-card-content></ion-card></ion-col>';
+
   }
 
   ngOnInit() {

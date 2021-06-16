@@ -6,6 +6,7 @@ from flask_cors import CORS, cross_origin
 import pandas as pd
 import numpy as np
 from tensorflow import keras
+from pymediainfo import MediaInfo
 
 # import importlib.util
 # spec = importlib.util.spec_from_file_location("toCsv", "/home/aleix/openpose/build/examples/tutorial_api_python/prova_csv.py")
@@ -129,19 +130,28 @@ def predict():
 
     global res
     res = []
+    notVideo = True
 
-    if not ".avi" in videofile:
-        convert_video()
+    video_info = MediaInfo.parse(video_path)
 
-    get_keypoints()
-    read_csv()
+    for track in video_info.tracks:
+        if track.track_type == "Video":
+            notVideo = False
     
-    # Cridem els models
-    good_bad()
-    no90()
-    pesEndavant()
-    torsoInclinat()
-    desnivellPeus()
+    if notVideo:
+        res.append("noVideo")
+
+    else:
+        convert_video()
+        get_keypoints()
+        read_csv()
+        
+        # Cridem els models
+        good_bad()
+        no90()
+        pesEndavant()
+        torsoInclinat()
+        desnivellPeus()
 
     os.system("rm -f ./files/*.avi ./files/*.mp4 ./files/*.csv")        
 

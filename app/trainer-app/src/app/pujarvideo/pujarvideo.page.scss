@@ -1,0 +1,78 @@
+ion-card {
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.upload-col{
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.upload-card{
+    padding: 50px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+ion-icon {
+    font-size: 40px;
+}
+
+
+.form-control {
+    size: 100px;
+}
+
+.video-card {
+    width: 300px;
+}
+
+.video{
+    height: 300px;
+}
+
+.ion-row-1{
+    padding-left: 37%;
+    padding-right: 30%;
+}
+.ion-row-2 {
+    padding-left: 43%;
+    padding-right: 40%;
+}
+
+.res-card {
+    padding-left: 2%;
+    width: 500px;
+    border-radius: 8px;
+}
+
+@media (max-width: 420px) {
+
+    body { 
+        font-size: 2em; 
+    }
+
+    .ion-row-1{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+    .ion-row-2 {
+        padding-left: 4%;
+        padding-right: 0%;
+    }    
+
+    .upload-card{
+        padding: 0px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .upload-col{
+        padding-left: 0%;
+        padding-right: 0%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+}

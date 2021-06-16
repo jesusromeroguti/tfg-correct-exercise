@@ -8,6 +8,8 @@ import { InfoPageRoutingModule } from './info-routing.module';
 
 import { InfoPage } from './info.page';
 
+import {ExpandableComponent} from "../components/expandable/expandable.component";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -15,6 +17,6 @@ import { InfoPage } from './info.page';
     IonicModule,
     InfoPageRoutingModule
   ],
-  declarations: [InfoPage]
+  declarations: [InfoPage, ExpandableComponent]
 })
 export class InfoPageModule {}

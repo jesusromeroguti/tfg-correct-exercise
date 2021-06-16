@@ -4,11 +4,13 @@
   
   body {
     font-family: Arial, Helvetica, sans-serif;
+    color: black;
   }
   
   /* Style the header */
   .header {
-    background-color: black;
+    background-color: white;
+    color: black;
     padding: 20px;
     text-align: justify;
     font-size: 40px;
@@ -16,7 +18,8 @@
   
   /* Create three unequal columns that floats next to each other */
   .column {
-    background-color: black;
+    background-color: white;
+    color: black;
     float: left;
     text-align: justify;
     padding-left: 10px;
@@ -25,25 +28,29 @@
   
   /* Column superior */
   .column.superior {
-    background-color: black;
+    background-color: white;
+    color: black;
     width: 50%;
   }
 
   /* Inferior column left */
   .column.inferior.left {
-    background-color: black;
+    background-color: white;
+    color: black;
     width: 70%;
   }
 
   /* Inferior column mid */
   .column.inferior.mid {
-    background-color: black;
+    background-color: white;
+    color: black;
     width: 20%;
   }
   
   /* Inferior column right */
   .column.inferior.right {
-    background-color: black;
+    background-color: white;
+    color: black;
     width: 10%;
   }
 

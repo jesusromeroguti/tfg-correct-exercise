@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
       <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
       </ion-buttons>
@@ -10,16 +10,60 @@
 </ion-header>
 
 <ion-content>
-  <input class="form-control" type="file" 
-            (change)="onChange($event)">
+  <ion-grid>
+    <ion-row>
+      <ion-col class="upload-col">
+        <ion-card class=upload-card color="secondary">
+          <ion-icon name="cloud-upload-outline"></ion-icon>
+          <ion-card-title>Selecciona el vídeo</ion-card-title>
+          <br>
+          <input class="form-control" type="file" 
+            (change)="onChange($event)" >
+            <br>
+          <ion-button color="light" (click)="upload()">
+              Puja
+          </ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-row-1">
+        <!-- <ion-col> -->
+          <ion-card class="res-card">
+            <ion-card-title>Resultat</ion-card-title>
+            <ion-card-content>
+              <div id="resposta"> Penja un vídeo per a obtindre un resultat. Pots tornar a veure els requeriments més avall. </div> 
+            </ion-card-content>
+          </ion-card>
+        <!-- </ion-col> -->
+    </ion-row>
+    <ion-row class="ion-row-2">
+        <!-- <ion-col> -->
+          <ion-card class="video-card">
+            <ion-card-title>Vídeo</ion-card-title>
+            <ion-card-content>
+              <ion-img class="video" src="assets/costat_fondo.png"></ion-img> 
+            </ion-card-content>
+          </ion-card>
+        <!-- </ion-col> -->
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-title>Requeriments vídeo</ion-card-title>
+          <ion-list>
+            <ion-item>1. Ha de sortir el cos sencer, no s'ha de tallar cap parte del cos.</ion-item>
+            <ion-item>2. Gravat de costat i que quan vegis el vídeo estiguis mirant cap el costat esquerre del mòbil.</ion-item>
+            <ion-item>3. Duració del vídeo entre 3 i 5 segons.</ion-item>
+            <ion-item>4. La càmera ha d'estar situada per gravar a la meitat del cos.</ion-item>
+            <ion-item>5. Evitar moviments de la càmera durant la gravació.</ion-item>
+          </ion-list>
+          <ion-list-header>*Complir aquest requeriments es important per afavorir el correcte funcionament de la aplicació. No podem asegurar que l'aplicació funcioni bé si no es compleixen.</ion-list-header>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
-    <button (click)="upload()" 
-        class="btn btn-success">
-        Upload
-    </button>
 
-  <div id="name"></div>
-
-  <!-- <p ng-bind-html="myText"></p> -->
+  
 
 </ion-content>

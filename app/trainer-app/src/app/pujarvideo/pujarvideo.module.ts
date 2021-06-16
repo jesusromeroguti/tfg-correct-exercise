@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PujarvideoPageRoutingModule } from './pujarvideo-routing.module';
 
 import { PujarvideoPage } from './pujarvideo.page';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PujarvideoPageRoutingModule
+    PujarvideoPageRoutingModule,
+    NgbModule
   ],
   declarations: [PujarvideoPage]
 })

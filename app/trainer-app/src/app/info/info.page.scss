@@ -1,0 +1,37 @@
+ion-grid {
+    --ion-grid-padding: 20px;
+    text-align: justify;
+}
+
+ion-img {
+    padding-left: 40px;
+    height: 300px;
+}
+
+ion-card {
+    // padding: 20px;
+    background-color: whitesmoke;
+}
+
+.interior-card {
+    background-color: white;
+    color: black;
+    font-size: medium;
+    padding: 20px;
+}
+
+@media source and (min-width: 200px){
+    ion-grid {
+        padding-left: 20px;
+        text-align: justify;
+    }
+
+    ion-img {
+        padding-left: 10px;
+        height: 300px;
+    }
+    ion-col {
+        size: auto;
+    }
+
+}
