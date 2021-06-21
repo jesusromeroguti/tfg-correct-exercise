@@ -1,29 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 
 import { File } from '@ionic-native/file';
-import { MediaCapture, MediaFile, CaptureError } from '@ionic-native/media-capture/ngx';
+import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus/ngx';
+import { ViewChild } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-gravarvideo',
   templateUrl: './gravarvideo.page.html',
   styleUrls: ['./gravarvideo.page.scss'],
 })
-export class GravarvideoPage implements OnInit {
+export class GravarvideoPage {
 
-  private mediaCapture: MediaCapture = null;
-  private file: File = null;
+  constructor(private videoCapturePlus: VideoCapturePlus) { }
 
-  constructor() { }
+ 
+  
+  // @ViewChild('videoElement') videoElement: any;  
+  // video: any;
 
-  ngOnInit() {
-  }
+  // initCamera(config:any) {
+  //   var browser = <any>navigator;
 
-  recordVideo() {
-    this.mediaCapture.captureVideo().then(
-      (data: MediaFile[]) => {
-        console.log(data);
-      },
-      (err: CaptureError) => console.error(err)
-    );
-  }
+  //   browser.getUserMedia = (browser.getUserMedia ||
+  //     browser.webkitGetUserMedia ||
+  //     browser.mozGetUserMedia ||
+  //     browser.msGetUserMedia);
+
+  //   browser.mediaDevices.getUserMedia(config).then(stream => {
+  //     this.video.src = window.URL.createObjectURL(stream);
+  //     this.video.play();
+  //   });
+  // }
+
+  // recordVideo(){
+  //   this.initCamera({ video: true, audio: false });
+  // }
+
+  // ngOnInit() {
+  //   this.video = this.videoElement.nativeElement;
+  // }
 }

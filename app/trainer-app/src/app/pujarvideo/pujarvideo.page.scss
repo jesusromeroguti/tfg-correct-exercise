@@ -26,11 +26,13 @@ ion-icon {
 }
 
 .video-card {
-    width: 300px;
+    width: 560px;
 }
 
-.video{
-    height: 300px;
+.videoPlayer {
+    display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ion-row-1{
@@ -61,6 +63,8 @@ ion-icon {
     .ion-row-2 {
         padding-left: 4%;
         padding-right: 0%;
+        text-align: center;
+        content: center;
     }    
 
     .upload-card{

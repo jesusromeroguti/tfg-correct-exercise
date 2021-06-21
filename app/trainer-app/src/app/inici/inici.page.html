@@ -10,44 +10,56 @@
 </ion-header>
 
 <ion-content>
-  <div class="header">
-    <h3> Entrenador personal </h3>
-  </div>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm>
+        <br>
+        <h2> Entrenador personal </h2>
+        <br>
+        <p>
+          Ets principiant i vols saber si la teva esquat està ben feta? No tens a ningú que et pugui corregir?
+          Portes un temps entrenant i vols perfeccionar la teva tècnica?. <b>Amb TrainerApp pots enviar un vídeo de la teva esquat 
+          i la nostra IA t'indicarà si ho estas fent bé o no.</b>
 
-  <div class="row">
-    <div class="column superior">
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </div>
+        </p>
+      </ion-col>
+        
+      <ion-col class="imatge">
+        <ion-img src="assets/logo.png"></ion-img> 
+      </ion-col>
+    </ion-row>
+
+      
+    <ion-row class="fila2">
+      <ion-col>
+        <ion-card>
+          <ion-card-title>Requeriments vídeo</ion-card-title>
+          <ion-list>
+            <ion-item>1. Ha de sortir el cos sencer, no s'ha de tallar cap part del cos.</ion-item>
+            <ion-item>2. Grava't de costat i de manera que quan vegis el vídeo estiguis mirant cap el costat esquerre del mòbil.</ion-item>
+            <ion-item>3. Duració del vídeo entre 3 i 5 segons.</ion-item>
+            <ion-item>4. La càmera ha d'estar situada a l'altura de la cintura per gravar-te millor.</ion-item>
+            <ion-item>5. Evitar moviments de la càmera durant la gravació.</ion-item>
+          </ion-list>
+          <ion-list-header>*Complir aquest requeriments és important per afavorir el correcte funcionament de la aplicació. No podem asegurar que l'aplicació funcioni bé si no es compleixen.</ion-list-header>
+        </ion-card>
+      </ion-col>
+      
+      <ion-col class="videoPlayer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ws91AfkRyac" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- <video controls="controls" preload="metadata" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+          <source src="assets/exemple.mp4" type="video/mp4" />
+         </video> -->
+      </ion-col>
+    
+      <ion-col class="buttons">
+        <ion-button [routerLink]="['/pujarvideo']"> Penja un vídeo </ion-button>
+        <br>
+        <ion-button [routerLink]="['/gravarvideo']"> Grava un vídeo </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
   
-    <div class="column superior">
-      <ion-img src="assets/costat_fondo.png"></ion-img>       
-    </div>
-  </div>
-  
-  <div class="row">
-    <div class="column inferior left">
-      <h3> Requeriments vídeos </h3>
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-      non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </div>
-  
-    <div class="column inferior mid">
-      Vídeooooooooooooo
-    </div>
-  
-    <div class="column inferior right">
-      <ion-button> Penja un vídeo </ion-button>
-      <hr>
-      <ion-button> Grava un vídeo </ion-button>
-    </div>
-  </div>
   
 
 </ion-content>

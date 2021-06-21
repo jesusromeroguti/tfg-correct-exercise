@@ -10,5 +10,25 @@
 </ion-header>
 
 <ion-content>
-<ion-button (click) = "recordVideo()"></ion-button>
+  <video id="myVideo" playsinline class="video-js vjs-default-skin"></video>
+  <ion-button (click) = "recordVideo()"></ion-button>
+
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <div class="text-center">
+        <h3>
+          <video #videoElement></video>
+        </h3>
+      </div>
+    </div>
+  </div>  -->
 </ion-content>
+
+<!-- <div class="row">
+  <ion-button (click)="recordVideo()" class="btn btn-primary">Play</button>
+  <button (click)="toggleControls()" class="btn btn-success">Toggle Controls</button>
+  <button (click)="pause()" class="btn btn-warning">Pause</button>
+  <button (click)="resume()" class="btn btn-info">Resume</button>
+  <button (click)="sound()" class="btn btn-danger">Play with Sound</button>
+</div> -->
+
