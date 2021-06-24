@@ -29,7 +29,7 @@ export class PujarvideoPage implements OnInit {
   upload(){
 
     if(this.file == null){
-      this.alertComponent.presentAlert('No hi ha cap fitxer seleccionat. Selecciona un abans de clicar "Pujar".');
+      this.alertComponent.presentAlert('No hi ha cap fitxer seleccionat. Selecciona un abans de clicar "Puja".');
     } else {
       // this.loadingController.presentLoading();
       // Create form data
@@ -73,7 +73,7 @@ export class PujarvideoPage implements OnInit {
       else {
         this.text = 'Creiem que tens un petit error, però per a estar segurs grava un altre vídeo. ';
         if(this.res.includes("no90")) {
-          this.text += 'Pot ser que no baixis suficientment. Flexiona més els genolls fins arriba com a minim a un angle de 90 graus entre la cuixa i el bessó. ';
+          this.text += 'Pot ser que no baixis suficientment. Flexiona més els genolls fins a arribar com a mínim a un angle de 90 graus entre la cuixa i el bessó. ';
         }
         if(this.res.includes("pesEndavant")) {
           this.text += "Pot ser que tiris el pes endavant. Assegura't de no aixecar els talons i tirar el cul enrere. ";
@@ -85,7 +85,7 @@ export class PujarvideoPage implements OnInit {
           this.text += "Pot ser que tinguis els peus mal posats. Prova de posar-los en paral·lel i a la mateixa alçada. ";
         }
         if(this.res.includes("pesEndavant") && this.res.length == 2){
-          this.text = "Sembla que la teva esquat es correcte però per estar segurs grava un altre vídeo.";
+          this.text = "Sembla que el teu esquat és correcte, però per a estar segurs grava un altre vídeo.";
           this.comptador += 1;
           if(this.comptador == 3){
             this.text = "Pot ser que tiris el pes endavant. Assegura't de no aixecar els talons i tirar el cul enrere.";
@@ -110,7 +110,7 @@ export class PujarvideoPage implements OnInit {
         
         this.text = '';
         if(this.res.includes("no90")) {
-          this.text += 'No baixes suficientment. Flexiona més els genolls fins arriba com a minim a un angle de 90 graus entre la cuixa i el bessó. ';
+          this.text += 'No baixes suficientment. Flexiona més els genolls fins a arribar com a mínim a un angle de 90 graus entre la cuixa i el bessó. ';
         }
         if(this.res.includes("pesEndavant")) {
           this.text += "Tires el pes endavant. Assegura't de no aixecar els talons i tirar el cul enrere. ";

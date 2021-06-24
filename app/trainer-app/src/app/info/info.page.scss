@@ -20,6 +20,10 @@ ion-card {
     padding: 20px;
 }
 
+ion-scroll {
+    height: auto;
+}
+
 @media source and (min-width: 200px){
     ion-grid {
         padding-left: 20px;

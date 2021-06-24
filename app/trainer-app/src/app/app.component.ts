@@ -26,11 +26,11 @@ export class AppComponent {
           url   : "/pujarvideo",
           icon  : "cloud-upload-outline"
         },
-        {
-          title : "Grava un vídeo",
-          url   : "/gravarvideo",
-          icon  : "videocam-outline"
-        },
+        // {
+        //   title : "Grava un vídeo",
+        //   url   : "/gravarvideo",
+        //   icon  : "videocam-outline"
+        // },
         {
           title : "Informació",
           url   : "/info",

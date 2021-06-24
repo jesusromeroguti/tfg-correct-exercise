@@ -16,7 +16,7 @@
     <ion-row class="ion-justify-content-center">
       <ion-col>
         <p>
-          L'exercici físic i més concretament l'exercici de força és una activitat beneficiosa per la salut de les persones però, si l'execució d'aquests exercicis és incorrecta pot ser una pràctica lesiva i per tant empitjorar la salut. Molts dels exercicis són difícils d'executar correctament per les persones que s'inicien, i no tothom té o pot tenir un entrenador personal que els guiï. La idea del projecte és crear un software que, d'una manera senzilla, permeti fer saber a l'usuari a l'hora de realitzar un exercici físic (com pot ser esquat, pes mort, dominada, flexió, etc.) si la seva tècnica és correcta. Correcta vol dir que compleix els requeriments o que té les característiques (biomecànicament) necessàries per no produir lesions i a més obtindre els beneficis de l’exercici en qüestió (augment de la força, tonificació, etc.). També podria ser útil com a eina complementària per a entrenadors, d'aquesta manera es podria evitar l'error humà.
+          L'exercici físic i més concretament l'exercici de força és una activitat beneficiosa per la salut de les persones, però, si l'execució d'aquests exercicis és incorrecta, pot ser una pràctica lesiva i per tant empitjorar la salut. Molts dels exercicis són difícils d'executar correctament per les persones que s'inicien, i no tothom té o pot tenir un entrenador personal que els guiï. La idea del projecte és crear un software que, d'una manera senzilla, permeti fer saber a l'usuari a l'hora de realitzar un exercici físic (com pot ser esquat, pes mort, dominada, flexió, etc.) si la seva tècnica és correcta. Correcta vol dir que compleix els requeriments o que té les característiques (biomecànicament) necessàries per no produir lesions i a més obtenir els beneficis de l'exercici en qüestió (augment de la força, tonificació, etc.). També podria ser útil com a eina complementària per a entrenadors, d'aquesta manera es podria evitar l'error humà.
         </p>
       </ion-col>
       
@@ -40,9 +40,10 @@
           <ion-card-header>
             <ion-card-title>{{item.titol}}</ion-card-title>
           </ion-card-header>
-          <app-expandable expandHeight="150px" [expanded]="item.expanded">
-            <ion-card class="interior-card">{{item.text}}</ion-card>
-            
+          <app-expandable expandHeight="380px" [expanded]="item.expanded">
+            <ion-card class="interior-card">
+              {{item.text}}
+            </ion-card>
           </app-expandable>
         </ion-card>
       </ion-col>
@@ -52,10 +53,31 @@
         <br>
         <p>
           El projecte ha estat desenvolupat per un grup de dos integrants, l'Aleix Serra Llorens i el Jesús Romero Gutiérrez, dos estudiants de l'EPSEVG (UPC) molt interessats en el camp de la Intel·ligència Artificial.
-          <br>
+          <br><br>
+          
           <b>Aleix Serra Llorens</b>
+          
           <br>
+          <br>
+
+          Vaig néixer a Vilanova i la Geltrú el 1996, i des de llavors encara hi visc. M'agrada la tecnologia, la música, l'esport, la muntanya i els animals. 
+          Penso que la IA té molt futur i cal investigar més sobre ella, ja que, com tota tecnologia, és necessari dominar-la. A l'hora d'escollir la carrera
+          em vaig decantar per la informàtica perquè sempre m'havia semblat interessant com funcionaven els ordinadors i perquè creia que, professionalment,
+          podies ser molt independent.
+
+          <br><br>
+
           <b>Jesús Romero Gutiérrez</b>
+          
+          <br>
+          <br>
+
+          Vaig nèixer a El Vendrell i des de ben petit em vaig interessar pel funcionament dels ordinadors i com es podien fer coses espectaculars amb ells. 
+          Més tard i ja a la carrera vaig descobrir el món de la IA i totes les possibilitats il·limitades que ofereix. 
+          Des d'aquest descobriment vaig tindre clar que volia aprendre sobre aquest camp i dedicar-me professionalment. 
+          Un dels primers passos per poder dedicar-me és precisament aquest treball de fi de grau. Les meves aficions són llegir novel·les i veure pel·lícules 
+          de ciència-ficció i fantasia, escoltar tota mena de música i sortir a fer esport a l'aire lliure (senderisme, bici, etc.). Faig CrossFit entre 3 i 5 dies
+          a la setmana i habitualment vaig a jugar a pàdel o tenis.
         </p>
       </ion-col>
     </ion-row>
