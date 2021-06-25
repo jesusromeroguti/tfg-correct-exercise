@@ -6,6 +6,7 @@ import subprocess
 import flask
 import ffmpeg
 import argparse
+from flask.scaffold import F
 import numpy as np
 import csv
 import datetime
@@ -237,11 +238,12 @@ def load_models():
 # Fa la conversió a avi dels videos
 def convert_video(video_path):
     name = video_path.split('.')[0] + ".avi"
-    subprocess.call(['ffmpeg', "-i -y", video_path, name])
+    flags = "-i -y"
+    subprocess.call(['ffmpeg', flags, video_path, name])
   
 
 # Passa el video per OpenPose i retorna un csv amb els keypoints
-def get_keypoints():
+def get_keypoints(filename):
     # os.system("python3 /home/aleix/openpose/build/examples/tutorial_api_python/csvAPI.py")
     fieldnames = ['Label',
               'NasX',
@@ -288,12 +290,12 @@ def get_keypoints():
         file_writer = csv.DictWriter(file, fieldnames=fieldnames)
         file_writer.writeheader()
 
-
     directori = "/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/api/files/"
-    for file in os.listdir(directori):
-        if file.endswith(".avi"):
-            filename = file
-    toCsv("/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/api/files/" + filename)
+    # for file in os.listdir(directori):
+    #     if file.endswith(".avi"):
+    #         filename = file
+    # toCsv("/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/api/files/" + filename)
+    toCsv(filename)
 
 def read_csv():
     path = '/home/aleix/Escriptori/coses_tfg/tfg-correct-exercise/api/files/keypoints.csv'
@@ -388,6 +390,7 @@ def predict():
             notVideo = False
     
     if notVideo:
+        os.system("rm -f ./files/*")
         res.append("noVideo")
 
     else:
@@ -406,7 +409,7 @@ def predict():
             
         else:
             convert_video(video_path)
-            get_keypoints()
+            get_keypoints(video_path)
             read_csv()
             
             # Cridem els models
